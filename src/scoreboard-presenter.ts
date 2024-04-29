@@ -6,7 +6,7 @@ import { ScoreboardData } from "./model/scoreboard-data";
 
 export class ScoreboardPresenter implements IScoreboardPresenter {
 
-    private defaultConfig: Required<PresenterConfig> = {
+    private config: Required<PresenterConfig> = {
         sortingFunction: (match1: ScoreboardData, match2: ScoreboardData) => {
             const totalScore = (scoreBoardData: ScoreboardData) => scoreBoardData.match.homeTeam.score + scoreBoardData.match.awayTeam.score;
             const totalScoreOrder = totalScore(match2) - totalScore(match1);
@@ -18,10 +18,12 @@ export class ScoreboardPresenter implements IScoreboardPresenter {
         }
     }
 
-    constructor(private scoreboardManager: IScoreboardManager, private presenterConfig: PresenterConfig = {}) {}
+    constructor(private scoreboardManager: IScoreboardManager, private presenterConfig: PresenterConfig = {}) {
+        this.config = {...this.config, ...this.presenterConfig};
+    }
 
     getSummary(): Array<MatchData> {
-        const data = [...this.scoreboardManager.getData()].sort((match1, match2) => this.defaultConfig.sortingFunction(match1, match2));
+        const data = [...this.scoreboardManager.getData()].sort((match1, match2) => this.config.sortingFunction(match1, match2));
         return data.map(data => data.match);
     }
 
