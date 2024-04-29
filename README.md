@@ -29,11 +29,11 @@ Creates a class responsible for presenting the data from the scoreboard
 
 ### ScoreboardData
 ```
-matchOrder: number -> order in which the match was added to the scoreboard. The higher the number, the later it was added
-match: Match -> data from the match
+startOrder: number -> order in which the match was added to the scoreboard. The higher the number, the later it was added
+match: MatchData -> data from the match
 ```
 
-### Match
+### MatchData
 ```
 id: number -> id of the match
 homeTeam: TeamState -> state of the home team during the match
@@ -43,11 +43,11 @@ state: MatchState -> state of the match. Possible values are: IN_PROGRESS and FI
 
 ### TeamState
 ```
-team: Team -> information about the team
+team: TeamData -> information about the team
 score: number -> score of the team
 ```
 
-### Team
+### TeamData
 ```
 name: string -> name of the team
 ```
