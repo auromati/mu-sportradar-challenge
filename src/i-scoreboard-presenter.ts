@@ -1,5 +1,5 @@
-import { ScoreboardData } from "./model/scoreboard-data";
+import { Match } from "./model/match";
 
 export interface IScoreboardPresenter {
-    getSummary(): Array<ScoreboardData>;
+    getSummary(): Array<Match>;
 }

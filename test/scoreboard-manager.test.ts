@@ -1,7 +1,5 @@
 import { MatchState } from '../src/model/match-state';
 import { ScoreboardManager } from '../src/scoreboard-manager';
-import { ValidationError } from '../src/validation-error';
-
 
 describe('ScoreboardManager', () => {
 
