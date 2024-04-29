@@ -1,0 +1,1 @@
+export enum MatchState { IN_PROGRESS, FINISHED }

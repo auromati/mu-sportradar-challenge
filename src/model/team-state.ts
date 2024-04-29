@@ -1,6 +1,6 @@
 import { Team } from "./team";
 
-export interface TeamMatchState {
+export interface TeamState {
     team: Team;
     score: number;
 }
