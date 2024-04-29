@@ -1,5 +1,5 @@
 import { IScoreboardManager } from "./i-scoreboard-manager";
-import { Match } from "./model/match";
+import { MatchData } from "./model/match-data";
 import { MatchState } from "./model/match-state";
 import { ScoreboardData } from "./model/scoreboard-data";
 import { TeamState } from "./model/team-state";
@@ -11,7 +11,7 @@ export class ScoreboardManager implements IScoreboardManager {
     private order = 0;
 
     startMatch(homeTeamName: string, awayTeamName: string): number {
-        const match: Match = {
+        const match: MatchData = {
             id: this.id,
             state: MatchState.IN_PROGRESS,
             homeTeam: {
@@ -24,7 +24,7 @@ export class ScoreboardManager implements IScoreboardManager {
             }
         };
 
-        this.data.set(this.id, {match, matchOrder: this.order++});
+        this.data.set(this.id, {match, startOrder: this.order++});
 
         return this.id++;
     }
@@ -49,7 +49,7 @@ export class ScoreboardManager implements IScoreboardManager {
 
         const newHomeTeamState: TeamState = {...scoreboardData.match.homeTeam, score: homeTeamScore};
         const newAwayTeamState: TeamState = {...scoreboardData.match.awayTeam, score: awayTeamScore};
-        const newMatchData: Match = {...scoreboardData.match, homeTeam: newHomeTeamState, awayTeam: newAwayTeamState};
+        const newMatchData: MatchData = {...scoreboardData.match, homeTeam: newHomeTeamState, awayTeam: newAwayTeamState};
 
         this.data.set(matchId, {...scoreboardData, match: newMatchData});
     }
@@ -64,7 +64,7 @@ export class ScoreboardManager implements IScoreboardManager {
             throw new ValidationError('The match with given id is already finished');
         }
 
-        const newMatchData: Match = {...scoreboardData.match, state: MatchState.FINISHED};
+        const newMatchData: MatchData = {...scoreboardData.match, state: MatchState.FINISHED};
         
         this.data.set(matchId, {...scoreboardData, match: newMatchData});
     }

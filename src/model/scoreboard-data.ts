@@ -1,6 +1,6 @@
-import { Match } from "./match";
+import { MatchData } from "./match-data";
 
 export interface ScoreboardData {
-    match: Match;
-    matchOrder: number;
+    match: MatchData;
+    startOrder: number;
 }

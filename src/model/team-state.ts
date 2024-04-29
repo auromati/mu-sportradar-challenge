@@ -1,6 +1,6 @@
-import { Team } from "./team";
+import { TeamData } from "./team-data";
 
 export interface TeamState {
-    team: Team;
+    team: TeamData;
     score: number;
 }

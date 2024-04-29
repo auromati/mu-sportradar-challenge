@@ -24,7 +24,7 @@ describe('ScoreboardManager', () => {
 
             expect(data).toEqual([
                 {
-                    matchOrder: 0,
+                    startOrder: 0,
                     match: {
                         id: expect.any(Number),
                         homeTeam: {
@@ -39,7 +39,7 @@ describe('ScoreboardManager', () => {
                     }
                 },
                 {
-                    matchOrder: 1,
+                    startOrder: 1,
                     match: {
                         id: expect.any(Number),
                         homeTeam: {
@@ -91,7 +91,7 @@ describe('ScoreboardManager', () => {
 
             expect(data).toEqual([
                 {
-                    matchOrder: 0,
+                    startOrder: 0,
                     match: {
                         id: expect.any(Number),
                         homeTeam: {
@@ -106,7 +106,7 @@ describe('ScoreboardManager', () => {
                     }
                 },
                 {
-                    matchOrder: 1,
+                    startOrder: 1,
                     match: {
                         id: expect.any(Number),
                         homeTeam: {
@@ -148,7 +148,7 @@ describe('ScoreboardManager', () => {
 
             expect(data).toEqual([
                 {
-                    matchOrder: 1,
+                    startOrder: 1,
                     match: {
                         id: expect.any(Number),
                         homeTeam: {

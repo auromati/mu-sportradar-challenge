@@ -31,7 +31,7 @@ describe('ScoreboardManager', () => {
         test('it should sort matches from the manager by their total scores in descending order', () => {
             scoreboardManager.getData.mockReturnValueOnce([
                 {
-                    matchOrder: 0,
+                    startOrder: 0,
                     match: {
                         id: 0,
                         homeTeam: {
@@ -46,7 +46,7 @@ describe('ScoreboardManager', () => {
                     }
                 },
                 {
-                    matchOrder: 1,
+                    startOrder: 1,
                     match: {
                         id: 1,
                         homeTeam: {
@@ -61,7 +61,7 @@ describe('ScoreboardManager', () => {
                     }
                 },
                 {
-                    matchOrder: 2,
+                    startOrder: 2,
                     match: {
                         id: 2,
                         homeTeam: {
@@ -123,7 +123,7 @@ describe('ScoreboardManager', () => {
         test('it should sort matches from the manager by their startOrder in descending order when their total scores are equal', () => {
             scoreboardManager.getData.mockReturnValueOnce([
                 {
-                    matchOrder: 0,
+                    startOrder: 0,
                     match: {
                         id: 0,
                         homeTeam: {
@@ -138,7 +138,7 @@ describe('ScoreboardManager', () => {
                     }
                 },
                 {
-                    matchOrder: 1,
+                    startOrder: 1,
                     match: {
                         id: 1,
                         homeTeam: {
@@ -153,7 +153,7 @@ describe('ScoreboardManager', () => {
                     }
                 },
                 {
-                    matchOrder: 2,
+                    startOrder: 2,
                     match: {
                         id: 2,
                         homeTeam: {
