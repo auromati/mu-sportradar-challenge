@@ -1,6 +1,11 @@
 # sportradar-challenge
 Coding challenge for sportradar
 
+## Usage
+Requirements: node.js (tested on v20)
+
+In order to run the tests, you need to install all the dependencies by running `npm install`. After that, you can check execution of the tests by running the `npm run test` method.
+
 ## Library reference
 
 ### ScoreboardManager
